@@ -30,6 +30,15 @@ public class PointTest {
         assertEquals(5, result2);
     }
 
+    @Test
+    void shouldSqrtBe5(){
+        // given 25
+        // when
+        double x = Math.sqrt(25);
+        //then
+        assertEquals(5, x);
+    }
+
 
 
 }
