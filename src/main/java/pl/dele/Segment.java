@@ -27,6 +27,10 @@ public class Segment {
         this.endPoint = endPoint;
     }
 
+    void draw(){
+        // drawing implementation
+    }
+
     public double getLength() {
          return Math.sqrt(
                     Math.pow(startPoint.getX() - endPoint.getX(),2) +
