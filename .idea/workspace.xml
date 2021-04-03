@@ -68,6 +68,21 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.CollectionTest.test">
+    <configuration name="CollectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Heroes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.dele.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.dele" />
+      <option name="MAIN_CLASS_NAME" value="pl.dele.CollectionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CollectionTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Heroes" />
       <extension name="coverage">
@@ -95,22 +110,6 @@
       <option name="PACKAGE_NAME" value="pl.dele" />
       <option name="MAIN_CLASS_NAME" value="pl.dele.PointTest" />
       <option name="METHOD_NAME" value="copyObject" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PointTest.equalOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Heroes" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.dele.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.dele" />
-      <option name="MAIN_CLASS_NAME" value="pl.dele.PointTest" />
-      <option name="METHOD_NAME" value="equalOperator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CollectionTest.test" />
+        <item itemvalue="JUnit.CollectionTest" />
         <item itemvalue="JUnit.SegmentTest.shouldDurationBe" />
         <item itemvalue="JUnit.PointTest.twoPointsInTheSamePosition" />
         <item itemvalue="JUnit.PointTest.copyObject" />
-        <item itemvalue="JUnit.PointTest.equalOperator" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +169,7 @@
       <updated>1617454638770</updated>
       <workItem from="1617454641593" duration="1578000" />
       <workItem from="1617458042890" duration="215000" />
-      <workItem from="1617460557260" duration="12282000" />
+      <workItem from="1617460557260" duration="12762000" />
     </task>
     <servers />
   </component>
@@ -194,38 +193,38 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="1136" y="509" width="471" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.1177@0.23.1920.1177" timestamp="1617464630621" />
-    <state width="894" height="340" key="GridCell.Tab.0.bottom" timestamp="1617477975685">
+    <state width="894" height="275" key="GridCell.Tab.0.bottom" timestamp="1617478836569">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617477975685" />
-    <state width="894" height="340" key="GridCell.Tab.0.center" timestamp="1617477975685">
+    <state width="894" height="275" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617478836569" />
+    <state width="894" height="275" key="GridCell.Tab.0.center" timestamp="1617478836568">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617477975685" />
-    <state width="894" height="340" key="GridCell.Tab.0.left" timestamp="1617477975684">
+    <state width="894" height="275" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617478836568" />
+    <state width="894" height="275" key="GridCell.Tab.0.left" timestamp="1617478836568">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617477975684" />
-    <state width="894" height="340" key="GridCell.Tab.0.right" timestamp="1617477975685">
+    <state width="894" height="275" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617478836568" />
+    <state width="894" height="275" key="GridCell.Tab.0.right" timestamp="1617478836569">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617477975685" />
-    <state width="894" height="340" key="GridCell.Tab.1.bottom" timestamp="1617477976212">
+    <state width="894" height="275" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617478836569" />
+    <state width="894" height="340" key="GridCell.Tab.1.bottom" timestamp="1617478761214">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.1.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617477976212" />
-    <state width="894" height="340" key="GridCell.Tab.1.center" timestamp="1617477976211">
+    <state width="894" height="340" key="GridCell.Tab.1.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617478761214" />
+    <state width="894" height="340" key="GridCell.Tab.1.center" timestamp="1617478761213">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.1.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617477976211" />
-    <state width="894" height="340" key="GridCell.Tab.1.left" timestamp="1617477976211">
+    <state width="894" height="340" key="GridCell.Tab.1.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617478761213" />
+    <state width="894" height="340" key="GridCell.Tab.1.left" timestamp="1617478761213">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.1.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617477976211" />
-    <state width="894" height="340" key="GridCell.Tab.1.right" timestamp="1617477976212">
+    <state width="894" height="340" key="GridCell.Tab.1.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617478761213" />
+    <state width="894" height="340" key="GridCell.Tab.1.right" timestamp="1617478761213">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.1.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617477976212" />
+    <state width="894" height="340" key="GridCell.Tab.1.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617478761213" />
     <state x="243" y="363" width="540" height="524" key="StructurePopup" timestamp="1617468764804">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>

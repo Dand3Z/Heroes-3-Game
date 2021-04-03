@@ -21,15 +21,21 @@ public class CollectionTest {
         List list = new ArrayList<>();
 
         set.add(p1);
+        set.add(p1);
         set.add(p2);
         assertEquals(1,set.size());
 
         list.add(p1);
+        list.add(p1);
         list.add(p2);
-        assertEquals(2, list.size());
+        assertEquals(3, list.size());
 
         assertTrue(set.contains(p1));
         assertTrue(set.contains(p2));
+
+        p1.setX(2);
+        // hashcode ulegnie zmianie
+        set.add(p1);
 
     }
 }
