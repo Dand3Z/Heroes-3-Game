@@ -5,22 +5,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SegmentTest {
     @Test
-    void shouldDurationBe(){
+    void shouldDurationBe()
+            //throws CloneNotSupportedException
+    {
         //given
-        Point point = new Point(1,1);
-        Point point2 = new Point(2,2);
-        Point negativePoint = new Point(-1,-1);
-        Segment segment = new Segment(point,point2);
-        Segment plusMinusSegment = new Segment(point, negativePoint);
+        Point point1 = new Point(1,1);
+        Point point2 = new Point(3,1);
+        Point point3 = new Point(1,3);
 
-        Segment s1 = new Segment(new Point(5,1), new Point(3,1));
-        Segment s2 = new Segment(new Point(1,1), new Point(1,3));
-        //when
-        double result = segment.getLength();
-        double result2 = plusMinusSegment.getLength();
-        //then
-        assertEquals(Math.sqrt(2), result);
-        assertEquals(2 * Math.sqrt(2), result2);
+//        Point point1copy = (Point) point1.clone();
+
+//        Point point1copy = new Point(point1);
+//        Segment s1 = new Segment(point1, point2);
+//        Segment s2 = new Segment(point1copy, point3);
+        // w powyższym musimy zawsze pamiętać o kopii
+        // w tym niżej już kopia jest wykonywana zawsze
+
+        Segment s1 = new SelfishSegment(point1, point2);
+        Segment s2 = new SelfishSegment(point1, point3);
+
+        assertEquals(s1, s2);
+
+        s1.getStartPoint().setX(5);
+
         assertEquals(s1,s2);
 
 

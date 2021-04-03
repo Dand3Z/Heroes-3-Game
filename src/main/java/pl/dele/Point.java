@@ -6,11 +6,17 @@ public class Point {
 
     private int x;
     private int y;
+    private double distanceToCenter;
 
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
+        distanceToCenter = Math.sqrt(x*x + y*y);
     }
+
+    public Point(Point aPoint) {
+        this(aPoint.x, aPoint.y);
+    } // konstruktor samokopiujący
 
     public int getX() {
         return x;
@@ -37,8 +43,13 @@ public class Point {
     }
 
     public double getDistanceToCenter() {
-        return Math.sqrt(x*x + y*y);
+        return distanceToCenter;
     }
+
+//    @Override
+//    protected Object clone() throws CloneNotSupportedException {
+//        return new Point(x,y);
+//    }
 
     @Override
     public boolean equals(Object o) {
