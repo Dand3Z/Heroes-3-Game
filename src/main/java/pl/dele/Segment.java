@@ -28,7 +28,7 @@ public class Segment {
     }
 
     void draw(){
-        // drawing implementation
+        System.out.println(toString());
     }
 
     public double getLength() {
