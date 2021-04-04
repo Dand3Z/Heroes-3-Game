@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d31be23f-b9fd-4558-b654-7e41e3960bb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/dele/ShapeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dele/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dele/Segment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dele/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dele/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dele/qShapeQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dele/qShapeQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dele/qShapeStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dele/qShapeStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +61,8 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.qShapeSetTest.qShapeSetTest">
-    <configuration name="CollectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.qShapeStackTest.shapeStack">
+    <configuration name="PointTest.equalOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Heroes" />
       <extension name="coverage">
         <pattern>
@@ -72,23 +71,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.dele" />
-      <option name="MAIN_CLASS_NAME" value="pl.dele.CollectionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CollectionTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Heroes" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.dele.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.dele" />
-      <option name="MAIN_CLASS_NAME" value="pl.dele.CollectionTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="pl.dele.PointTest" />
+      <option name="METHOD_NAME" value="equalOperator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShapeTest.shapeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="qShapeQueueTest.shapeQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Heroes" />
       <extension name="coverage">
         <pattern>
@@ -119,14 +103,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.dele" />
-      <option name="MAIN_CLASS_NAME" value="pl.dele.ShapeTest" />
-      <option name="METHOD_NAME" value="shapeTest" />
+      <option name="MAIN_CLASS_NAME" value="pl.dele.qShapeQueueTest" />
+      <option name="METHOD_NAME" value="shapeQueue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="qShapeSetTest.qShapeSetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="qShapeQueue.shapeQueue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Heroes" />
       <extension name="coverage">
         <pattern>
@@ -135,8 +119,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.dele" />
-      <option name="MAIN_CLASS_NAME" value="pl.dele.qShapeSetTest" />
-      <option name="METHOD_NAME" value="qShapeSetTest" />
+      <option name="MAIN_CLASS_NAME" value="pl.dele.qShapeQueue" />
+      <option name="METHOD_NAME" value="shapeQueue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="qShapeStackTest.shapeStack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Heroes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.dele.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.dele" />
+      <option name="MAIN_CLASS_NAME" value="pl.dele.qShapeStackTest" />
+      <option name="METHOD_NAME" value="shapeStack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.qShapeSetTest.qShapeSetTest" />
-        <item itemvalue="JUnit.ShapeTest.shapeTest" />
-        <item itemvalue="JUnit.CollectionTest.test" />
-        <item itemvalue="JUnit.CollectionTest" />
+        <item itemvalue="JUnit.qShapeStackTest.shapeStack" />
+        <item itemvalue="JUnit.qShapeQueueTest.shapeQueue" />
         <item itemvalue="JUnit.SegmentTest.shouldDurationBe" />
+        <item itemvalue="JUnit.qShapeQueue.shapeQueue" />
+        <item itemvalue="JUnit.PointTest.equalOperator" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +165,7 @@
       <workItem from="1617454641593" duration="1578000" />
       <workItem from="1617458042890" duration="215000" />
       <workItem from="1617460557260" duration="17129000" />
-      <workItem from="1617564436354" duration="2106000" />
+      <workItem from="1617564436354" duration="4951000" />
     </task>
     <servers />
   </component>
@@ -181,30 +181,30 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="1045" y="123" width="736" height="813" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1617470549918" />
-    <state x="283" y="365" key="#com.intellij.ide.util.MemberChooser" timestamp="1617564475242">
+    <state x="283" y="365" key="#com.intellij.ide.util.MemberChooser" timestamp="1617568936100">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="283" y="365" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1617564475242" />
+    <state x="283" y="365" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1617568936100" />
     <state x="1136" y="509" width="471" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1617464630621">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="1136" y="509" width="471" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.1177@0.23.1920.1177" timestamp="1617464630621" />
-    <state width="894" height="340" key="GridCell.Tab.0.bottom" timestamp="1617564433378">
+    <state width="894" height="275" key="GridCell.Tab.0.bottom" timestamp="1617569815999">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617564433378" />
-    <state width="894" height="340" key="GridCell.Tab.0.center" timestamp="1617564433377">
+    <state width="894" height="275" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1617569815999" />
+    <state width="894" height="275" key="GridCell.Tab.0.center" timestamp="1617569815999">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617564433377" />
-    <state width="894" height="340" key="GridCell.Tab.0.left" timestamp="1617564433377">
+    <state width="894" height="275" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1617569815999" />
+    <state width="894" height="275" key="GridCell.Tab.0.left" timestamp="1617569815998">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617564433377" />
-    <state width="894" height="340" key="GridCell.Tab.0.right" timestamp="1617564433378">
+    <state width="894" height="275" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1617569815998" />
+    <state width="894" height="275" key="GridCell.Tab.0.right" timestamp="1617569815999">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state width="894" height="340" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617564433378" />
+    <state width="894" height="275" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617569815999" />
     <state width="894" height="340" key="GridCell.Tab.1.bottom" timestamp="1617564433379">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -221,10 +221,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="894" height="340" key="GridCell.Tab.1.right/0.23.1920.1177@0.23.1920.1177" timestamp="1617564433379" />
-    <state x="243" y="363" width="543" height="524" key="StructurePopup" timestamp="1617560542996">
+    <state x="243" y="363" width="543" height="524" key="StructurePopup" timestamp="1617567442597">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="243" y="363" width="543" height="524" key="StructurePopup/0.23.1920.1177@0.23.1920.1177" timestamp="1617560542996" />
+    <state x="243" y="363" width="543" height="524" key="StructurePopup/0.23.1920.1177@0.23.1920.1177" timestamp="1617567442597" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1617468552068">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
