@@ -32,10 +32,18 @@ public class CollectionTest {
 
         assertTrue(set.contains(p1));
         assertTrue(set.contains(p2));
+        /*
+        powyżej mamy prawdę ponieważ gdy wyliczymy hash z
+        obiektu p1 i p2 to są one identyczne, po czy jest wywoływane
+        equals, które już finalnie potwierdza, że obiekty są tożsame
+         */
 
         p1.setX(2);
         // hashcode ulegnie zmianie
         set.add(p1);
+        System.out.println("size: " + set.size());
+        System.out.println("Contains P1: " + set.contains(p1));
+        System.out.println("Contains P2: " + set.contains(p2));
 
     }
 }
