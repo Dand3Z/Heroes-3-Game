@@ -3,13 +3,21 @@ package pl.dele;
 import java.util.Objects;
 
 public class Segment {
+
+    // === pola ==
+
+    // punkt początkowy i końcowy krawędzi
     private Point startPoint;
     private Point endPoint;
+
+    // == konstruktory ==
 
     public Segment(Point startPoint, Point endPoint) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
+
+    // == getery i setery ==
 
     public Point getStartPoint() {
         return startPoint;
@@ -26,6 +34,8 @@ public class Segment {
     public void setEndPoint(Point endPoint) {
         this.endPoint = endPoint;
     }
+
+    // == metody ==
 
     void draw(){
         System.out.println(toString());

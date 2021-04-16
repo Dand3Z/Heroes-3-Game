@@ -4,9 +4,13 @@ import java.util.Objects;
 
 public class Point {
 
+    // == Pola ==
+
     private int x;
     private int y;
     private double distanceToCenter;
+
+    // == Konstruktory ==
 
     public Point(int x, int y) {
         this.x = x;
@@ -14,9 +18,12 @@ public class Point {
         distanceToCenter = Math.sqrt(x*x + y*y);
     }
 
+    // konstruktor samokopiujący
     public Point(Point aPoint) {
         this(aPoint.x, aPoint.y);
-    } // konstruktor samokopiujący
+    }
+
+    // == getery i setery
 
     public int getX() {
         return x;
@@ -34,6 +41,8 @@ public class Point {
         this.y = y;
     }
 
+    // == metody ==
+
     @Override
     public String toString() {
         return "Point{" +
@@ -45,11 +54,6 @@ public class Point {
     public double getDistanceToCenter() {
         return distanceToCenter;
     }
-
-//    @Override
-//    protected Object clone() throws CloneNotSupportedException {
-//        return new Point(x,y);
-//    }
 
     @Override
     public boolean equals(Object o) {
