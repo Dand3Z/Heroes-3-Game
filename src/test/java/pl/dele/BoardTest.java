@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
 
-    Test
+    @Test
     void shouldAddCreature(){
         // create board
         Board board = new Board();
@@ -16,7 +16,7 @@ class BoardTest {
         board.add(new Point(0,0), creature);
 
         // get creature from board
-        Creature creatureFromBoard = board.get(new Point(0,,0));
+        Creature creatureFromBoard = board.get(0,0);
 
         // compare creatures
         assertEquals(creature, creatureFromBoard);
