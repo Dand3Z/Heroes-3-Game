@@ -3,7 +3,7 @@ package pl.dele;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Board {
+class Board {
 
     /**
      * Board can add and move the Creatures

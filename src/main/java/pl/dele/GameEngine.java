@@ -9,7 +9,7 @@ public class GameEngine {
     private final CreatureTurnQueue queue;
 
     // init game
-    GameEngine(List<Creature> creatures1, List<Creature> creatures2){
+    public GameEngine(List<Creature> creatures1, List<Creature> creatures2){
         board = new Board();
         putCreatureToBoard(creatures1, creatures2);
         // create new list with creatures1 and creatures2
@@ -20,11 +20,11 @@ public class GameEngine {
     }
 
     // engine knows active creature
-    void move(Point targetPoint){
+    public void move(Point targetPoint){
         board.move(targetPoint, queue.getActiveCreature());
     }
 
-    void pass(){
+    public void pass(){
         queue.next();
     }
 
@@ -34,7 +34,7 @@ public class GameEngine {
      * @param y
      */
     // error when we click empty field
-    void attack(int x, int y){
+    public void attack(int x, int y){
         queue.getActiveCreature().attack(board.get(x,y));
     }
 

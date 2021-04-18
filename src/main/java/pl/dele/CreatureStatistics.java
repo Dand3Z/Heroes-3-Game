@@ -1,6 +1,6 @@
 package pl.dele;
 
-public class CreatureStatistics {
+class CreatureStatistics {
 
     final private String name;
     final private int attack;
