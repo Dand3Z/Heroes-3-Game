@@ -55,7 +55,7 @@ class BoardTest {
         assertEquals(creature, creatureFromBoard);
     }
 
-    // przemieszczanie się jednostki
+    // Moving
     @Test
     void shouldCreatureMoveToAnotherPoint(){
         board.add(new Point(0,0), creature);
