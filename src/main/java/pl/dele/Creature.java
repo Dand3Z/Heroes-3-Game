@@ -7,6 +7,8 @@ public class Creature {
     // base statistics of creature
     private final CreatureStatistics stats;
     private int currentHp;
+    // one counter attack per turn
+    private boolean counterAttackInThisTurn;
 
     Creature(){
         this("DefName", 0, 0, 10, 100);
@@ -23,11 +25,27 @@ public class Creature {
 
     void attack(Creature defender) {
         if (isAlive()){
-            if (defender == null) throw new InvalidParameterException();
-            var attackValue = this.stats.getAttack() - defender.stats.getArmor();
+            int damageToDeal = calculateDamage(defender);
+            dealDamage(defender, damageToDeal);
 
-            if (attackValue > 0) defender.currentHp -= attackValue;
+            // one counter attack per turn - check it here
+            if (!defender.counterAttackInThisTurn){
+                int damageToDealInCounterAttack = defender.calculateDamage(this);
+                dealDamage(this, damageToDealInCounterAttack);
+                defender.counterAttackInThisTurn = true;
+            }
         }
+    }
+
+    private void dealDamage(Creature defender, int damageToDeal) {
+        defender.currentHp -= damageToDeal;
+    }
+
+    private int calculateDamage(Creature defender) {
+        if (defender == null) throw new InvalidParameterException();
+        var damageToDeal = this.stats.getAttack() - defender.stats.getArmor();
+        if (damageToDeal < 0) damageToDeal = 0;
+        return damageToDeal;
     }
 
     private boolean isAlive(){
