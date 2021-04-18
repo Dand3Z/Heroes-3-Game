@@ -9,18 +9,22 @@ public class Board {
      * Board can add and move the Creatures
      */
     private final Map<Point, Creature> map;
+    public final static int WIDTH = 20;
+    public final static int HEIGHT = 15;
 
     Board() {
         this.map = new HashMap<>();
     }
 
     void add(Point aPoint, Creature aCreature) {
-        throwExceptionWhenFieldIsTaken(aPoint);
+        throwExceptionWhenFieldIsTakenOrIsOutsideMap(aPoint);
         map.put(aPoint, aCreature);
     }
 
-    private void throwExceptionWhenFieldIsTaken(Point aPoint) {
-        if (map.containsKey(aPoint)) throw new IllegalArgumentException();
+    private void throwExceptionWhenFieldIsTakenOrIsOutsideMap(Point aPoint) {
+        if (aPoint.getX() < 0 || aPoint.getX() > WIDTH || aPoint.getY() < 0
+                || aPoint.getY() > HEIGHT ||  map.containsKey(aPoint))
+            throw new IllegalArgumentException();
     }
 
     Creature get(int aX, int aY) {
@@ -32,7 +36,7 @@ public class Board {
         if (creature == null) throw new NullPointerException();
 
         Creature creatureFromDstPoint = map.get(dstPoint);
-        throwExceptionWhenFieldIsTaken(dstPoint);
+        throwExceptionWhenFieldIsTakenOrIsOutsideMap(dstPoint);
 
         // delete from map
         map.remove(srcPoint);
