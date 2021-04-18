@@ -33,6 +33,7 @@ public class Board {
 
     // to test
     Point get(Creature creature){
+        //if (!map.containsValue(creature)) throw new InvalidParameterException();
         return map.keySet().stream().filter(p -> map.get(p).equals(creature)).findAny().get();
     }
 
