@@ -1,6 +1,5 @@
 package pl.dele;
 
-import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,9 +33,7 @@ public class Board {
 
     // to test
     Point get(Creature creature){
-        if (!map.containsValue(creature)) throw new InvalidParameterException();
-        // ...
-        return null;
+        return map.keySet().stream().filter(p -> map.get(p).equals(creature)).findAny().get();
     }
 
     void move(Point dstPoint, Point srcPoint) {
