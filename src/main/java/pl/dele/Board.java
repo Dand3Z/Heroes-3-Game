@@ -36,6 +36,10 @@ public class Board {
         return map.keySet().stream().filter(p -> map.get(p).equals(creature)).findAny().get();
     }
 
+    void move(Point dstPoint, Creature creature){
+        move(dstPoint, get(creature));
+    }
+
     void move(Point dstPoint, Point srcPoint) {
         Creature creature = map.get(srcPoint);
         if (creature == null) throw new NullPointerException();
