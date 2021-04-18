@@ -1,6 +1,5 @@
 package pl.dele;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,5 +53,19 @@ class BoardTest {
 
         // compare creatures
         assertEquals(creature, creatureFromBoard);
+    }
+
+    // przemieszczanie się jednostki
+    @Test
+    void shouldCreatureMoveToAnotherPoint(){
+        board.add(new Point(0,0), creature);
+
+        board.move(new Point(2,2), creature);
+
+        Creature creatureFromBoard = board.get(2,2);
+        assertEquals(creature, creatureFromBoard);
+
+        creatureFromBoard = board.get(0,0);
+        assertNull(creatureFromBoard);
     }
 }
