@@ -3,7 +3,7 @@ package pl.dele;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Board {
+class Board {
 
     /**
      * Board can add and move the Creatures
@@ -31,11 +31,18 @@ public class Board {
         return map.get(new Point(aX, aY));
     }
 
+    Point get(Creature creature){
+        return map.keySet().stream().filter(p -> map.get(p).equals(creature)).findAny().get();
+    }
+
+    void move(Point dstPoint, Creature creature){
+        move(dstPoint, get(creature));
+    }
+
     void move(Point dstPoint, Point srcPoint) {
         Creature creature = map.get(srcPoint);
         if (creature == null) throw new NullPointerException();
-
-        Creature creatureFromDstPoint = map.get(dstPoint);
+        
         throwExceptionWhenFieldIsTakenOrIsOutsideMap(dstPoint);
 
         // delete from map

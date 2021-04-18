@@ -3,6 +3,8 @@ package pl.dele;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
@@ -55,7 +57,21 @@ class BoardTest {
         assertEquals(creature, creatureFromBoard);
     }
 
-    // Moving
+    @Test
+    void shouldReturnCorrectLocationOfCreature(){
+        board.add(new Point(6,6), creature);
+        Point result = board.get(creature);
+
+        assertEquals(new Point(6,6), result);
+    }
+
+    @Test
+    void shouldThrowNoSuchElementExceptionWhenCreatureIsNotValueOfMap(){
+        assertThrows(NoSuchElementException.class, () -> board.get(new Creature
+                ("name",1,2,3,4)));
+    }
+
+    // == Moving ==
     @Test
     void shouldCreatureMoveToAnotherPoint(){
         board.add(new Point(0,0), creature);

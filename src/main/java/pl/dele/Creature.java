@@ -2,7 +2,7 @@ package pl.dele;
 
 import java.security.InvalidParameterException;
 
-public class Creature {
+class Creature {
 
     // base statistics of creature
     private final CreatureStatistics stats;
