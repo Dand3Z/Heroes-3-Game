@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AttackCreatureTest {
 
-    public static final int NOT_IMPORTANT = 5;
+    private static final int NOT_IMPORTANT = 5;
 
     @Test
     void creatureShouldLost10HPWhenAttackerHas20AttackAndDefenderHas10Armor(){
