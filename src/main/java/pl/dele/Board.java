@@ -22,4 +22,8 @@ public class Board {
     Creature get(int aX, int aY) {
         return map.get(new Point(aX, aY));
     }
+
+    void move(Point dstPoint, Point srcPoint) {
+        
+    }
 }

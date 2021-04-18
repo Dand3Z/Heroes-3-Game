@@ -60,7 +60,7 @@ class BoardTest {
     void shouldCreatureMoveToAnotherPoint(){
         board.add(new Point(0,0), creature);
 
-        board.move(new Point(2,2), creature);
+        board.move(new Point(2,2), new Point(0,0));
 
         Creature creatureFromBoard = board.get(2,2);
         assertEquals(creature, creatureFromBoard);
