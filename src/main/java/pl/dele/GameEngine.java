@@ -24,6 +24,20 @@ public class GameEngine {
         board.move(targetPoint, queue.getActiveCreature());
     }
 
+    void pass(){
+        queue.next();
+    }
+
+    /**
+     * Client clicks field on board. Every field has x and y params
+     * @param x
+     * @param y
+     */
+    // error when we click empty field
+    void attack(int x, int y){
+        queue.getActiveCreature().attack(board.get(x,y));
+    }
+
     private void putCreatureToBoard(List<Creature> creatures1, List<Creature> creatures2) {
         putCreaturesFromOneSideOfBoard(creatures1,0);
         putCreaturesFromOneSideOfBoard(creatures2,board.WIDTH-1);
