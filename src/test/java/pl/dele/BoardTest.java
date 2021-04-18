@@ -68,5 +68,11 @@ class BoardTest {
         creatureFromBoard = board.get(0,0);
         assertNull(creatureFromBoard);
     }
-    
+
+    @Test
+    void shouldThrowNullPointerExceptionWhenSrcPointIsNull(){
+        assertThrows(NullPointerException.class,
+                () -> board.move(new Point(2,2), new Point(0,0)));
+        
+    }
 }
