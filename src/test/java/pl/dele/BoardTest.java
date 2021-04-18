@@ -73,6 +73,6 @@ class BoardTest {
     void shouldThrowNullPointerExceptionWhenSrcPointIsNull(){
         assertThrows(NullPointerException.class,
                 () -> board.move(new Point(2,2), new Point(0,0)));
-        
+
     }
 }

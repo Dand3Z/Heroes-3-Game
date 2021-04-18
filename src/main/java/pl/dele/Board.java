@@ -26,6 +26,8 @@ public class Board {
     void move(Point dstPoint, Point srcPoint) {
         Creature creature = map.get(srcPoint);
         if (creature == null) throw new NullPointerException();
+        Creature creatureFromDstPoint = map.get(dstPoint);
+        if (creatureFromDstPoint != null) throw new IllegalArgumentException();
         // delete from map
         map.remove(srcPoint);
         // add to map
