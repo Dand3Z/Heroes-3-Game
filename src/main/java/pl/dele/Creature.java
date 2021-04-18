@@ -14,4 +14,8 @@ public class Creature {
     Creature(String name, int attack, int armor, int maxHp, int moveRange) {
         stats = new CreatureStatistics(name, attack, armor, maxHp, moveRange);
     }
+
+    int getCurrentHp() {
+        return currentHp;
+    }
 }
