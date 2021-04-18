@@ -30,7 +30,7 @@ public class Board {
     Creature get(int aX, int aY) {
         return map.get(new Point(aX, aY));
     }
-    
+
     Point get(Creature creature){
         return map.keySet().stream().filter(p -> map.get(p).equals(creature)).findAny().get();
     }
@@ -42,8 +42,7 @@ public class Board {
     void move(Point dstPoint, Point srcPoint) {
         Creature creature = map.get(srcPoint);
         if (creature == null) throw new NullPointerException();
-
-        Creature creatureFromDstPoint = map.get(dstPoint);
+        
         throwExceptionWhenFieldIsTakenOrIsOutsideMap(dstPoint);
 
         // delete from map
