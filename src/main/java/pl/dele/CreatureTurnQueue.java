@@ -14,6 +14,10 @@ public class CreatureTurnQueue {
     public CreatureTurnQueue(Collection<Creature> creatureList) {
         creatures = creatureList;
         creaturesQueue = new LinkedList<>();
+        initQueue();
+    }
+
+    private void initQueue() {
         creaturesQueue.addAll(creatures);
         // set first activeCreature
         next();
@@ -25,5 +29,8 @@ public class CreatureTurnQueue {
 
     void next() {
         activeCreature = creaturesQueue.poll();
+        if (activeCreature == null){
+            initQueue();
+        }
     }
 }
