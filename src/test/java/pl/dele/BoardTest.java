@@ -75,4 +75,17 @@ class BoardTest {
                 () -> board.move(new Point(2,2), new Point(0,0)));
 
     }
+
+    @Test
+    void shouldThrowIllegalExceptionWhenDstPointIsNotNull(){
+        board.add(new Point(0,0), creature);
+        Creature c2 = new Creature();
+        board.add(new Point(2,2), c2);
+        assertThrows(IllegalArgumentException.class,
+                () -> board.move(new Point(2,2), new Point(0,0)));
+
+        assertEquals(board.get(0,0), creature);
+        assertEquals(board.get(2,2), c2);
+
+    }
 }
