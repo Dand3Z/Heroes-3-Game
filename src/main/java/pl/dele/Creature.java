@@ -29,6 +29,7 @@ public class Creature {
             dealDamage(defender, damageToDeal);
 
             // one counter attack per turn - check it here
+            // add defender.isAlive() check later
             if (!defender.counterAttackInThisTurn){
                 int damageToDealInCounterAttack = defender.calculateDamage(this);
                 dealDamage(this, damageToDealInCounterAttack);
