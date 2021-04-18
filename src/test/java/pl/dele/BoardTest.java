@@ -59,13 +59,14 @@ class BoardTest {
     @Test
     void shouldCreatureMoveToAnotherPoint(){
         board.add(new Point(0,0), creature);
-
         board.move(new Point(2,2), new Point(0,0));
 
+        // create move to new point
         Creature creatureFromBoard = board.get(2,2);
         assertEquals(creature, creatureFromBoard);
-
+        // create is no longer in source point
         creatureFromBoard = board.get(0,0);
         assertNull(creatureFromBoard);
     }
+    
 }
