@@ -42,4 +42,35 @@ class CreatureTurnQueueTest {
         assertEquals(a, creatureTurnQueue.getActiveCreature());
     }
 
+    @Test
+    void shouldMergeTwoListMakeValidQueueAndChangeActiveCreature(){
+        Creature d = new Creature();
+        Creature e = new Creature();
+        Collection<Creature> creatureList2 = new ArrayList<>();
+
+        creatureList2.add(d);
+        creatureList2.add(e);
+        Collection<Creature> twoMergedList = new ArrayList<>();
+
+        twoMergedList.addAll(creatureList);
+        twoMergedList.addAll(creatureList2);
+
+        CreatureTurnQueue creatureTurnQueue = new CreatureTurnQueue(twoMergedList);
+
+        // test
+        assertEquals(a, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+        assertEquals(b, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+        assertEquals(c, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+        assertEquals(d, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+        assertEquals(e, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+        assertEquals(a, creatureTurnQueue.getActiveCreature());
+        creatureTurnQueue.next();
+
+    }
+
 }

@@ -16,12 +16,15 @@ public class GameEngine {
         List<Creature> twoSidesCreatures = new ArrayList<>();
         twoSidesCreatures.addAll(creatures1);
         twoSidesCreatures.addAll(creatures2);
+
         queue = new CreatureTurnQueue(twoSidesCreatures);
+        // kolejka powinna działać////////
     }
 
     // engine knows active creature
     public void move(Point targetPoint){
         board.move(targetPoint, queue.getActiveCreature());
+        queue.next(); //////
     }
 
     public void pass(){
@@ -36,6 +39,7 @@ public class GameEngine {
     // error when we click empty field
     public void attack(int x, int y){
         queue.getActiveCreature().attack(board.get(x,y));
+        queue.next(); /////
     }
 
     private void putCreatureToBoard(List<Creature> creatures1, List<Creature> creatures2) {

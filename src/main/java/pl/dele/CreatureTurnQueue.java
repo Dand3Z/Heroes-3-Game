@@ -22,6 +22,12 @@ class CreatureTurnQueue {
         next();
     }
 
+    // all creatures can again counter-attack
+    private void resetCounterAttack(){
+        for(Creature creature : creatures)
+            creature.resetCounterAttack();
+    }
+
     Creature getActiveCreature() {
         return activeCreature;
     }
@@ -30,6 +36,7 @@ class CreatureTurnQueue {
         activeCreature = creaturesQueue.poll();
         if (activeCreature == null){
             initQueue();
+            resetCounterAttack();
         }
     }
 }
