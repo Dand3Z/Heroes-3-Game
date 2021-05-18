@@ -3,6 +3,7 @@ package pl.dele;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CounterAttackCreatureTest {
 
@@ -34,5 +35,15 @@ class CounterAttackCreatureTest {
 
         attacker2.attack(defender);
         assertEquals(100, attacker2.getCurrentHp());
+    }
+
+    @Test
+    void creatureShouldNotCounterAttackWhenIsDead(){
+        Creature attacker = new Creature("attacker", 30, 10, 100, NOT_IMPORTANT);
+        Creature defender = new Creature("defender", 50, 5, 20,NOT_IMPORTANT);
+        attacker.attack(defender);
+
+        assertEquals(100, attacker.getCurrentHp());
+        assertTrue(defender.getCurrentHp() <= 0);
     }
 }
