@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.dele.gui.BattleMapController">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Player 1" />
+            <Label text=" VS " />
+            <Label text="Player 2" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane fx:id="gripMap" BorderPane.alignment="CENTER">
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="spellBookButton" mnemonicParsing="false" text="SpellBook" />
+            <Button fx:id="passButton" mnemonicParsing="false" text="Pass" />
+            <Button fx:id="escapeButton" mnemonicParsing="false" text="Escape" />
+         </children>
+      </HBox>
+   </bottom>
+
+   <stylesheets>
+      <URL value="@main.css" />
+   </stylesheets>
+</BorderPane>
