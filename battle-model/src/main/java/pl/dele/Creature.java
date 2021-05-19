@@ -2,7 +2,7 @@ package pl.dele;
 
 import java.security.InvalidParameterException;
 
-class Creature {
+public class Creature {
 
     // base statistics of creature
     private final CreatureStatistics stats;
@@ -10,7 +10,7 @@ class Creature {
     // one counter attack per turn
     private boolean counterAttackInThisTurn;
 
-    Creature(){
+    public Creature(){
         this("DefName", 0, 0, 10, 100);
     }
 
@@ -19,9 +19,7 @@ class Creature {
         currentHp = stats.getMaxHp();
     }
 
-    int getCurrentHp() {
-        return currentHp;
-    }
+    int getCurrentHp() { return currentHp; }
 
     void attack(Creature defender) {
         if (isAlive()){
@@ -54,4 +52,6 @@ class Creature {
     private boolean isAlive(){
         return currentHp > 0;
     }
+
+    public String getName() { return stats.getName(); }
 }

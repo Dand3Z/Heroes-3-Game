@@ -52,4 +52,8 @@ public class GameEngine {
             board.add(new Point(x,i * 2), creatures1.get(i));
         }
     }
+
+    public Creature get(int x, int y) {
+        return board.get(x,y);
+    }
 }
