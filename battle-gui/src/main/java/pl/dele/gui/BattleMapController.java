@@ -1,7 +1,10 @@
 package pl.dele.gui;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import pl.dele.Creature;
 import pl.dele.GameEngine;
 
@@ -12,6 +15,9 @@ public class BattleMapController {
 
     @FXML
     private GridPane gripMap;
+
+    @FXML
+    private Button passButton;
 
     private final GameEngine gameEngine;
 
@@ -29,17 +35,31 @@ public class BattleMapController {
 
     @FXML
     void initialize(){
+
+        passButton.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
+            gameEngine.pass();
+            refreshGui();
+        });
+
+        refreshGui();
+
+    }
+
+    private void refreshGui() {
         for(int x = 0; x < 20; ++x)
             for(int y = 0; y < 15; ++y){
-                MapTile rectangle = new MapTile();
-                gripMap.add(rectangle,x,y);
+                MapTile mapTile = new MapTile();
+                gripMap.add(mapTile,x,y);
 
                 Creature c = gameEngine.get(x,y);
                 if (c != null){
-                    rectangle.addCreature(c.getName());
+                    mapTile.addCreature(c.getName());
+
+                    if (c == gameEngine.getActiveCreature()){
+                        mapTile.setBackground(Color.GREEN);
+                    }
                 }
             }
-
     }
 
 }

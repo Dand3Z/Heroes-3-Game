@@ -7,13 +7,19 @@ import javafx.scene.shape.Rectangle;
 
 class MapTile extends StackPane {
 
+    private final Rectangle rectangle;
+
     public MapTile() {
-        Rectangle rectangle = new Rectangle(42,42, Color.WHITE);
+        rectangle = new Rectangle(42,42, Color.WHITE);
         rectangle.setStroke(Color.BLACK);
         getChildren().add(rectangle);
     }
 
     void addCreature(String name){
         getChildren().add(new Label(name));
+    }
+
+    void setBackground(Color color){
+        rectangle.setFill(color);
     }
 }
