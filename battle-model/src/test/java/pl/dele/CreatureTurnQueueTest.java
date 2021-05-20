@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -46,14 +47,11 @@ class CreatureTurnQueueTest {
     void shouldMergeTwoListMakeValidQueueAndChangeActiveCreature(){
         Creature d = new Creature();
         Creature e = new Creature();
-        Collection<Creature> creatureList2 = new ArrayList<>();
 
-        creatureList2.add(d);
-        creatureList2.add(e);
         Collection<Creature> twoMergedList = new ArrayList<>();
 
         twoMergedList.addAll(creatureList);
-        twoMergedList.addAll(creatureList2);
+        twoMergedList.addAll(List.of(d,e));
 
         CreatureTurnQueue creatureTurnQueue = new CreatureTurnQueue(twoMergedList);
 

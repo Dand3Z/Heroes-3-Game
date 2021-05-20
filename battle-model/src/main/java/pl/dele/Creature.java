@@ -54,4 +54,13 @@ public class Creature {
     }
 
     public String getName() { return stats.getName(); }
+
+    boolean canCounterAttack() {
+        return !counterAttackInThisTurn;
+    }
+
+    // Observer Pattern
+    public void update() {
+        counterAttackInThisTurn = false;
+    }
 }

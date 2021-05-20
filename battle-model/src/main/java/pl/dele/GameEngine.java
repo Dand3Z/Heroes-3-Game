@@ -16,9 +16,10 @@ public class GameEngine {
         List<Creature> twoSidesCreatures = new ArrayList<>();
         twoSidesCreatures.addAll(creatures1);
         twoSidesCreatures.addAll(creatures2);
-
         queue = new CreatureTurnQueue(twoSidesCreatures);
-        // kolejka powinna działać////////
+
+        // game engine adds observers
+        twoSidesCreatures.forEach(c -> queue.addObserver(c));
     }
 
     // engine knows active creature

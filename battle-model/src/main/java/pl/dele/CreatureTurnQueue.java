@@ -1,18 +1,18 @@
 package pl.dele;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 class CreatureTurnQueue {
 
     private final Collection<Creature> creatures;
     private final Queue<Creature> creaturesQueue;
     private Creature activeCreature;
+    private Set<Creature> observers;
 
     CreatureTurnQueue(Collection<Creature> creatureList) {
         creatures = creatureList;
         creaturesQueue = new LinkedList<>();
+        observers = new HashSet<>();
         initQueue();
     }
 
@@ -20,12 +20,6 @@ class CreatureTurnQueue {
         creaturesQueue.addAll(creatures);
         // set first activeCreature
         next();
-    }
-
-    // all creatures can again counter-attack
-    private void resetCounterAttack(){
-        for(Creature creature : creatures)
-            creature.resetCounterAttack();
     }
 
     Creature getActiveCreature() {
@@ -36,7 +30,25 @@ class CreatureTurnQueue {
         activeCreature = creaturesQueue.poll();
         if (activeCreature == null){
             initQueue();
-            resetCounterAttack();
+            notifyObserver();
         }
     }
+    // Observer Pattern
+    void addObserver(Creature observer){
+        observers.add(observer);
+    }
+
+    void removeObserver(Creature observer){
+        observers.remove(observer);
+    }
+
+    void notifyObserver(){
+        observers.forEach(o -> o.update());
+    }
+
+    //    // all creatures can again counter-attack
+//    private void resetCounterAttack(){
+//        for(Creature creature : creatures)
+//            creature.resetCounterAttack();
+//    }
 }
