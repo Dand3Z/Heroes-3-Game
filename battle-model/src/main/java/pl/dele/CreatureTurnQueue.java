@@ -33,7 +33,8 @@ class CreatureTurnQueue {
             notifyObserver();
         }
     }
-    // Observer Pattern
+
+    // == Observer Pattern ==
     void addObserver(Creature observer){
         observers.add(observer);
     }
@@ -45,10 +46,4 @@ class CreatureTurnQueue {
     void notifyObserver(){
         observers.forEach(o -> o.update());
     }
-
-    //    // all creatures can again counter-attack
-//    private void resetCounterAttack(){
-//        for(Creature creature : creatures)
-//            creature.resetCounterAttack();
-//    }
 }

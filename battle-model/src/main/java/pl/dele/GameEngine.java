@@ -1,12 +1,17 @@
 package pl.dele;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameEngine {
 
+    public static final String CURRENT_CREATURE_CHANGED = "CURRENT_CREATURE_CHANGED";
     private final Board board;
     private final CreatureTurnQueue queue;
+    private final PropertyChangeSupport observerSupport;
 
     // init game
     public GameEngine(List<Creature> creatures1, List<Creature> creatures2){
@@ -20,6 +25,20 @@ public class GameEngine {
 
         // game engine adds observers
         twoSidesCreatures.forEach(c -> queue.addObserver(c));
+        observerSupport = new PropertyChangeSupport(this);
+    }
+
+    // == Observer Pattern ==
+    public void addObserver(String eventType ,PropertyChangeListener obs){
+        observerSupport.addPropertyChangeListener(eventType ,obs);
+    }
+
+    public void removeObserver(PropertyChangeListener obs){
+        observerSupport.removePropertyChangeListener(obs);
+    }
+
+    public void notifyObservers(PropertyChangeEvent event){
+        observerSupport.firePropertyChange(event);
     }
 
     // engine knows active creature
@@ -29,7 +48,10 @@ public class GameEngine {
     }
 
     public void pass(){
+        Creature oldActiveCreature = queue.getActiveCreature();
         queue.next();
+        Creature newActiveCreature = queue.getActiveCreature();
+        notifyObservers(new PropertyChangeEvent(this, CURRENT_CREATURE_CHANGED, oldActiveCreature, newActiveCreature));
     }
 
     /**
