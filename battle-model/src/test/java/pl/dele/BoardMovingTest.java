@@ -14,13 +14,12 @@ public class BoardMovingTest {
     void init(){
         board = new Board();
         creature = new Creature();
+        board.add(new Point(0,0), creature);
     }
 
     @Test
     void shouldCreatureMoveToAnotherPoint(){
-        board.add(new Point(0,0), creature);
         board.move(new Point(2,2), new Point(0,0));
-
         // create move to new point
         Creature creatureFromBoard = board.get(2,2);
         assertEquals(creature, creatureFromBoard);
@@ -32,12 +31,11 @@ public class BoardMovingTest {
     @Test
     void shouldThrowNullPointerExceptionWhenSrcPointIsNull(){
         assertThrows(NullPointerException.class,
-                () -> board.move(new Point(2,2), new Point(0,0)));
+                () -> board.move(new Point(2,2), new Point(1,0)));
     }
 
     @Test
-    void shouldThrowIllegalExceptionWhenDstPointIsNotNull(){
-        board.add(new Point(0,0), creature);
+    void shouldThrowIllegalExceptionWhenCreatureIsTryingToMoveToTakeField(){
         Creature c2 = new Creature();
         board.add(new Point(2,2), c2);
         assertThrows(IllegalArgumentException.class,
@@ -67,5 +65,21 @@ public class BoardMovingTest {
         assertFalse(board.canMove(creature, 4,4));
         assertFalse(board.canMove(creature, 4,6));
         assertFalse(board.canMove(creature, 6,4));
+    }
+
+    @Test
+    void cannotMoveWhenCreatureHasNotEnoughMovePoint(){
+        creature = new Creature("x",1,1,10,1);
+        board.add(new Point(5,5),creature);
+
+        assertFalse(board.canMove(creature, 6,6));
+    }
+
+    @Test
+    void cannotMoveWhenFieldIsTaken(){
+        Creature creature = new Creature("x",1,1,10,10);
+        board.add(new Point(5,5),creature);
+
+        assertFalse(board.canMove(creature, 0,0));
     }
 }

@@ -11,7 +11,7 @@ public class Creature {
     private boolean counterAttackInThisTurn;
 
     public Creature(){
-        this("DefName", 0, 0, 10, 100);
+        this("DefName", 0, 0, 10, 10);
     }
 
     Creature(String name, int attack, int armor, int maxHp, int moveRange) {
@@ -54,6 +54,7 @@ public class Creature {
     }
 
     public String getName() { return stats.getName(); }
+    public int getMoveRange() { return stats.getMoveRange(); }
 
     boolean canCounterAttack() {
         return !counterAttackInThisTurn;

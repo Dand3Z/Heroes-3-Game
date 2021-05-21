@@ -33,4 +33,8 @@ public class Point {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    double distanceTo(Point point) {
+        return Math.sqrt(Math.pow(x - point.getX(),2) + Math.pow(y - point.getY(), 2));
+    }
 }

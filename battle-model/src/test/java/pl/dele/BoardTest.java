@@ -37,12 +37,12 @@ class BoardTest {
     }
 
     @Test
-    void shouldThrowIllegalArgumentExceptionWhenYouTryAddCreatureToNotEmptyField(){
+    void shouldThrowIllegalStateExceptionWhenYouTryAddCreatureToNotEmptyField(){
         board.add(new Point(0,0), creature);
 
         // try to add another creature to 0,0 field. Should throw exception -> old point is still here
         Creature creature2 = new Creature();
-        assertThrows(IllegalArgumentException.class, () -> board.add(new Point(0,0), creature2));
+        assertThrows(IllegalStateException.class, () -> board.add(new Point(0,0), creature2));
 
         Creature creatureFromBoard = board.get(0,0);
 

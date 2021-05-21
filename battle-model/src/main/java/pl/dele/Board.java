@@ -16,15 +16,23 @@ class Board {
         this.map = new HashMap<>();
     }
 
-    void add(Point aPoint, Creature aCreature) {
-        throwExceptionWhenFieldIsTakenOrIsOutsideMap(aPoint);
-        map.put(aPoint, aCreature);
+    void add(Point point, Creature creature) {
+        throwExceptionWhenIsOutsideMap(point);
+        throwExceptionIfFieldIsTaken(point);
+        map.put(point, creature);
     }
 
-    private void throwExceptionWhenFieldIsTakenOrIsOutsideMap(Point aPoint) {
-        if (aPoint.getX() < 0 || aPoint.getX() > WIDTH || aPoint.getY() < 0
-                || aPoint.getY() > HEIGHT ||  map.containsKey(aPoint))
-            throw new IllegalArgumentException();
+    private void throwExceptionIfFieldIsTaken(Point point) {
+        if (isFieldTaken(point)) throw new IllegalStateException("Field isn't empty");
+    }
+
+    private boolean isFieldTaken(Point point) {
+        return map.containsKey(point);
+    }
+
+    private void throwExceptionWhenIsOutsideMap(Point aPoint) {
+        if (aPoint.getX() < 0 || aPoint.getX() > WIDTH || aPoint.getY() < 0 || aPoint.getY() > HEIGHT)
+            throw new IllegalArgumentException("You are trying to works outside the map");
     }
 
     Creature get(int aX, int aY) {
@@ -40,18 +48,22 @@ class Board {
     }
 
     void move(Point dstPoint, Point srcPoint) {
-        Creature creature = map.get(srcPoint);
-        if (creature == null) throw new NullPointerException();
-        
-        throwExceptionWhenFieldIsTakenOrIsOutsideMap(dstPoint);
-
-        // delete from map
+        throwExceptionWhenIsOutsideMap(dstPoint);
+        if (map.containsKey(dstPoint)){
+            throw new IllegalArgumentException("Field is taken");
+        }
+        Creature creatureFromSrcPoint = map.get(srcPoint);
+        if (creatureFromSrcPoint == null) throw new NullPointerException();
         map.remove(srcPoint);
-        // add to map
-        map.put(dstPoint, creature);
+        map.put(dstPoint, creatureFromSrcPoint);
     }
 
-    boolean canMove(Creature activeCreature, int x, int y) {
-        return true;
+    boolean canMove(Creature creature, int x, int y) {
+        throwExceptionWhenIsOutsideMap(new Point(x,y));
+        if (!map.containsValue(creature)) throw new IllegalStateException("Creature isn't in board");
+
+        Point currentPosition = get(creature);
+        double distance = currentPosition.distanceTo(new Point(x,y));
+        return distance <= creature.getMoveRange() && !isFieldTaken(new Point(x,y));
     }
 }

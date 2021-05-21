@@ -60,9 +60,9 @@ public class BattleMapController implements PropertyChangeListener {
                     if (c == gameEngine.getActiveCreature()){
                         mapTile.setBackground(Color.GREEN);
                     }
-                    else if (gameEngine.canMove(x,y)){
-                        mapTile.setBackground(Color.GREY);
-                    }
+                }
+                else if (gameEngine.canMove(x,y)){
+                    mapTile.setBackground(Color.GREY);
                 }
             }
     }
