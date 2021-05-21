@@ -50,4 +50,8 @@ class Board {
         // add to map
         map.put(dstPoint, creature);
     }
+
+    boolean canMove(Creature activeCreature, int x, int y) {
+        return true;
+    }
 }
