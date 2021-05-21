@@ -9,6 +9,8 @@ import java.util.List;
 public class GameEngine {
 
     public static final String CURRENT_CREATURE_CHANGED = "CURRENT_CREATURE_CHANGED";
+    public static final String CREATURE_MOVED = "CREATURE_MOVED";
+
     private final Board board;
     private final CreatureTurnQueue queue;
     private final PropertyChangeSupport observerSupport;
@@ -43,8 +45,9 @@ public class GameEngine {
 
     // engine knows active creature
     public void move(Point targetPoint){
+        Point sourcePoint = board.get(getActiveCreature());
         board.move(targetPoint, queue.getActiveCreature());
-        queue.next(); //////
+        notifyObservers(new PropertyChangeEvent(this, CREATURE_MOVED, sourcePoint, targetPoint));//////
     }
 
     public void pass(){
@@ -62,7 +65,6 @@ public class GameEngine {
     // error when we click empty field
     public void attack(int x, int y){
         queue.getActiveCreature().attack(board.get(x,y));
-        queue.next(); /////
     }
 
     private void putCreatureToBoard(List<Creature> creatures1, List<Creature> creatures2) {
@@ -86,7 +88,5 @@ public class GameEngine {
 
     public boolean canMove(int x, int y) {
         return board.canMove(getActiveCreature(), x, y);
-
-
     }
 }

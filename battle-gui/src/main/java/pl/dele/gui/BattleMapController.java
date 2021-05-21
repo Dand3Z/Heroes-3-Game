@@ -7,6 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import pl.dele.Creature;
 import pl.dele.GameEngine;
+import pl.dele.Point;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -38,6 +39,7 @@ public class BattleMapController implements PropertyChangeListener {
     @FXML
     void initialize(){
         gameEngine.addObserver(GameEngine.CURRENT_CREATURE_CHANGED,this);
+        gameEngine.addObserver(GameEngine.CREATURE_MOVED,this);
 
         passButton.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
             gameEngine.pass();
@@ -62,7 +64,12 @@ public class BattleMapController implements PropertyChangeListener {
                     }
                 }
                 else if (gameEngine.canMove(x,y)){
+                    final int x1 = x;
+                    final int y1 = y;
                     mapTile.setBackground(Color.GREY);
+                    mapTile.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
+                        gameEngine.move(new Point(x1, y1));
+                    });
                 }
             }
     }
